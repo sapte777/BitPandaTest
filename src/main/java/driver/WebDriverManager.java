@@ -30,6 +30,7 @@ class WebDriverManager {
                 Tacitus.getInstance().logSuccess("Created a new Chrome instance.");
                 ChromeOptions opt = new ChromeOptions();
                 opt.addArguments("--kiosk");
+                opt.addArguments("--window-size=1920,1080");
                 return new ChromeDriver(opt);
             case FIREFOX:
                 System.setProperty("webdriver.gecko.driver", _fileName);
@@ -52,7 +53,6 @@ class WebDriverManager {
     private String getFilePath(String fileName) {
         ClassLoader classLoader = getClass().getClassLoader();
         File file = new File(classLoader.getResource(fileName).getFile());
-        System.out.println("The file paths este:"+ file );
         return file.getAbsolutePath();
     }
 
