@@ -2,6 +2,7 @@ package driver;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 import utilities.ConfigurationData;
@@ -27,7 +28,9 @@ class WebDriverManager {
             case CHROME:
                 System.setProperty("webdriver.chrome.driver", _fileName);
                 Tacitus.getInstance().logSuccess("Created a new Chrome instance.");
-                return new ChromeDriver();
+                ChromeOptions opt = new ChromeOptions();
+                opt.addArguments("--kiosk");
+                return new ChromeDriver(opt);
             case FIREFOX:
                 System.setProperty("webdriver.gecko.driver", _fileName);
                 Tacitus.getInstance().logSuccess("Created a new Firefox instance.");
