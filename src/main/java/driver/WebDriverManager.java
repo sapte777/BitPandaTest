@@ -28,10 +28,7 @@ class WebDriverManager {
             case CHROME:
                 System.setProperty("webdriver.chrome.driver", _fileName);
                 Tacitus.getInstance().logSuccess("Created a new Chrome instance.");
-                ChromeOptions opt = new ChromeOptions();
-                opt.addArguments("--kiosk");
-                opt.addArguments("--window-size=1920,1080");
-                return new ChromeDriver(opt);
+                return new ChromeDriver();
             case FIREFOX:
                 System.setProperty("webdriver.gecko.driver", _fileName);
                 Tacitus.getInstance().logSuccess("Created a new Firefox instance.");
