@@ -134,6 +134,7 @@ public class AutomationPracticeDemo_PageFactory {
     public static boolean checkSignInButtonPresence() {
         Tacitus.getInstance().log("Finding the presence of \"loginUserSignInButton\" WebElement");
         try {
+            CRTestUtils.checkPageIsReady();
             return loginUserSignInButton.isDisplayed();
 
         } catch (Exception ex) {
@@ -443,6 +444,7 @@ public class AutomationPracticeDemo_PageFactory {
         try {
 
             CRTestUtils.checkPageIsReady();
+            CRTestUtils.waitTest(3);
             for (int i = 0; i < openItemDetail.size(); i++) {
                 Actions actions = new Actions(driver);
                 actions.moveToElement(overItemSection.get(i)).perform();
@@ -522,6 +524,7 @@ public class AutomationPracticeDemo_PageFactory {
         Tacitus.getInstance().log("Finding the \"cartEmptyConfirmationText\" WebElement");
         try{
             CRTestUtils.waitTest(4);
+            CRTestUtils.jsScroll(cartEmptyConfirmationText);
             return cartEmptyConfirmationText.isDisplayed();
         }catch(Exception ex){
             Tacitus.getInstance().logError("Error while finding the \"cartEmptyConfirmationText\" WebElement", ex);
