@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="E2E - Test_AutomationProcess" verbose="1">
+    <listeners>
+        <listener class-name="utilities.listeners.SuiteInterceptor"/>
+        <listener class-name="utilities.listeners.TestInterceptor"/>
+    </listeners>
+
+    <test name="LoginUserAutomationPractice">
+        <classes>
+            <class name="danGrigTest.framework.Test_AutomationProcess" />
+        </classes>
+    </test>
+</suite>
