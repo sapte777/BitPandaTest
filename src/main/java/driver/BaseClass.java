@@ -57,7 +57,7 @@ public class BaseClass {
      */
     @AfterMethod
     public synchronized void tearDown() {
-//        WebDriverThreadManager.destroyDriver();
-//        DriverUtils.driverSleep(2);
-    }
+		DriverUtils.driverSleep(20);
+		WebDriverThreadManager.getDriver().quit();
+	}
 }
