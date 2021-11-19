@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="E2E - Test_AutomationProcess"  verbose="1">
+    <listeners>
+        <listener class-name="utilities.listeners.SuiteInterceptor"/>
+        <listener class-name="utilities.listeners.TestInterceptor"/>
+    </listeners>
+
+    <test name="ContacUs_Login">
+<!--        <parameter name="selected_browser" value="FIREFOX"></parameter>-->
+        <classes>
+            <class name="pscTests.contactUs_Login.Test_KontaktiereUns_Login_DidNotReceiveEmailWithOneTimeCode" />
+            <class name="pscTests.contactUs_Login.Test_KontaktiereUns_Login_DidNotReceiveNotification" />
+            <class name="pscTests.contactUs_Login.Test_KontaktiereUns_Login_ForgotLoginDetails" />
+            <class name="pscTests.contactUs_Login.Test_KontaktiereUns_Login_Others" />
+        </classes>
+    </test>
+    <test name="ContacUs_Aufladung">
+<!--        <parameter name="selected_browser" value="CHROME"></parameter>-->
+        <classes>
+            <class name="pscTests.contactUs_Aufladung.Test_KontaktiereUns_Aufladung_KeinGuthabenAufladen" />
+            <class name="pscTests.contactUs_Aufladung.Test_KontaktiereUns_Aufladung_LadelimitErreicht" />
+            <class name="pscTests.contactUs_Aufladung.Test_KontaktiereUns_Aufladung_Sonstiges" />
+        </classes>
+    </test>
+    <test name="ContacUs_Mastercard">
+        <classes>
+            <class name="pscTests.contactUs_Mastercard.Test_KontaktiereUns_Mastercard_PSCMastercardNichtErhalten" />
+            <class name="pscTests.contactUs_Mastercard.Test_KontaktiereUns_Mastercard_FrageBestellvorgang" />
+            <class name="pscTests.contactUs_Mastercard.Test_KontaktiereUns_Mastercard_PSCMastercardKannNichtAktivieren" />
+            <class name="pscTests.contactUs_Mastercard.Test_KontaktiereUns_Mastercard_PSCMastercardKundigen" />
+            <class name="pscTests.contactUs_Mastercard.Test_KontaktiereUns_Mastercard_PSCMastercardPINVergessen" />
+            <class name="pscTests.contactUs_Mastercard.Test_KontaktiereUns_Mastercard_PSCMastercardVerlorenOderGestolen" />
+            <class name="pscTests.contactUs_Mastercard.Test_KontaktiereUns_Mastercard_Sonstiges" />
+        </classes>
+    </test>
+    <test name="ContacUs_Others">
+        <classes>
+            <class name="pscTests.contactUs_Others.Test_KontaktiereUns_Others_FrageGuthaben_Ja" />
+            <class name="pscTests.contactUs_Others.Test_KontaktiereUns_Others_FrageGuthaben_Nein" />
+            <class name="pscTests.contactUs_Others.Test_KontaktiereUns_Others_FrageProdukten" />
+            <class name="pscTests.contactUs_Others.Test_KontaktiereUns_Others_KontoKundigen" />
+            <class name="pscTests.contactUs_Others.Test_KontaktiereUns_Others_PersonlichenDatenAndern" />
+            <class name="pscTests.contactUs_Others.Test_KontaktiereUns_Others_PrepaidCodeVerlorenOderGestohlen" />
+            <class name="pscTests.contactUs_Others.Test_KontaktiereUns_Others_Sonstiges" />
+        </classes>
+    </test>
+    <test name="ContacUs_Registration">
+        <classes>
+            <class name="pscTests.contactUs_Registration.Test_KontaktiereUns_Registration_ConfirmEmailAddress" />
+            <class name="pscTests.contactUs_Registration.Test_KontaktiereUns_Registration_ConfirmMobileNumber" />
+            <class name="pscTests.contactUs_Registration.Test_KontaktiereUns_Registration_EnteringMyDetails" />
+            <class name="pscTests.contactUs_Registration.Test_KontaktiereUns_Registration_UploadMyDocuments" />
+            <class name="pscTests.contactUs_Registration.Test_KontaktiereUns_Registration_Others" />
+        </classes>
+    </test>
+    <test name="ContacUs_UpgradePSCAccountToUnlimited">
+        <classes>
+            <class name="pscTests.contactUs_UpgradePSCAccountToUnlimited.Test_KontaktiereUns_UpgradeKontosAufUnlimited_Sonstiges" />
+            <class name="pscTests.contactUs_UpgradePSCAccountToUnlimited.Test_KontaktiereUns_UpgradeKontosAufUnlimited_UpgradePSCKontosDurchführen" />
+        </classes>
+    </test>
+    <test name="ContacUs_Zahlungen">
+        <classes>
+            <class name="pscTests.contactUs_Zahlungen.Test_KontaktiereUns_Zahlungen_EmpfangGeldVonOnlineShop" />
+            <class name="pscTests.contactUs_Zahlungen.Test_KontaktiereUns_Zahlungen_FehlermeldungErhaltenZahlungVornehmenWollte_Case_Ja" />
+            <class name="pscTests.contactUs_Zahlungen.Test_KontaktiereUns_Zahlungen_FehlermeldungErhaltenZahlungVornehmenWollte_Case_Nein" />
+            <class name="pscTests.contactUs_Zahlungen.Test_KontaktiereUns_Zahlungen_GuthabenPSCCodesBbereitsVerwendet" />
+            <class name="pscTests.contactUs_Zahlungen.Test_KontaktiereUns_Zahlungen_JuniorPIN_Case_Ja" />
+            <class name="pscTests.contactUs_Zahlungen.Test_KontaktiereUns_Zahlungen_JuniorPIN_Case_Nein" />
+            <class name="pscTests.contactUs_Zahlungen.Test_KontaktiereUns_Zahlungen_PSCCodeGesperrt" />
+            <class name="pscTests.contactUs_Zahlungen.Test_KontaktiereUns_Zahlungen_PSCCodeOnlineNichtAkzeptiert_Case_Ja" />
+            <class name="pscTests.contactUs_Zahlungen.Test_KontaktiereUns_Zahlungen_PSCCodeOnlineNichtAkzeptiert_Case_Nein" />
+            <class name="pscTests.contactUs_Zahlungen.Test_KontaktiereUns_Zahlungen_PSCCodeUngultig" />
+            <class name="pscTests.contactUs_Zahlungen.Test_KontaktiereUns_Zahlungen_Sonstiges_Case_Ja" />
+            <class name="pscTests.contactUs_Zahlungen.Test_KontaktiereUns_Zahlungen_Sonstiges_Case_Nein" />
+            <class name="pscTests.contactUs_Zahlungen.Test_KontaktiereUns_Zahlungen_ZahlungNichtOnlineEingegangen_Case_Ja" />
+            <class name="pscTests.contactUs_Zahlungen.Test_KontaktiereUns_Zahlungen_ZahlungNichtOnlineEingegangen_Case_Nein" />
+            <class name="pscTests.contactUs_Zahlungen.Test_KontaktiereUns_Zahlungen_ziffern16PSCCodesKannNichtLesen" />
+        </classes>
+    </test>
+</suite>

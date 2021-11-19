@@ -1,7 +1,6 @@
 package driver;
 
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.*;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import utilities.ClassFinder;
@@ -38,7 +37,6 @@ public class BaseClass {
 	
 	            for (Class<?> foundClass : allClasses) {
 	                try {
-	                   
 	                            Method method = foundClass.getMethod("init");
 	                            method.invoke(foundClass);
 	                        
@@ -51,13 +49,43 @@ public class BaseClass {
 	            Tacitus.getInstance().log("Unable to reinitialize static classes.");
 	        }
 	    }
+//
+//	/**
+//	 * Looks into the "pages" package and scans for Classes of any type. For each class found searches for and init()
+//	 * method. If found it executes the method to initialize all WebElements from that class.
+//	 */
+//	@BeforeMethod
+//	public synchronized void setup(String selected_browser) {
+//
+//		WebDriverThreadManager.startDriver(selected_browser);
+//
+//		try {
+//			List<Class<?>> allClasses = ClassFinder.findAllClasses("pages");
+//
+//			for (Class<?> foundClass : allClasses) {
+//				try {
+//					Method method = foundClass.getMethod("init");
+//					method.invoke(foundClass);
+//
+//				} catch (NoSuchMethodException ex) {
+//					Tacitus.getInstance().log("Unable to find init() method in class " + foundClass.getName());
+//				}
+//			}
+//
+//		} catch (Exception ex) {
+//			Tacitus.getInstance().log("Unable to reinitialize static classes.");
+//		}
+//	}
 
     /**
      * Closes the WebDriver and waits for 2 seconds.
      */
     @AfterMethod
     public synchronized void tearDown() {
-		DriverUtils.driverSleep(20);
-		WebDriverThreadManager.getDriver().quit();
+		WebDriverThreadManager.destroyDriver();
+		DriverUtils.driverSleep(2);
+//		DriverUtils.driverSleep(20);
+//		WebDriverThreadManager.getDriver().quit();
+////		WebDriverThreadManager.getDriver().close();
 	}
 }

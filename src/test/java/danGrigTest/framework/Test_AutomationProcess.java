@@ -3,7 +3,7 @@ package danGrigTest.framework;
 import driver.BaseClass;
 import org.testng.Assert;
 import pages.AutomationPracticeDemo_PageFactory;
-import pages.Enums.ColorList;
+import pages.enums.ColorList;
 import utilities.listeners.RetryAnalyzer;
 
 import org.testng.annotations.Test;

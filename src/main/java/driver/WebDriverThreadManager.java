@@ -22,7 +22,7 @@ import com.relevantcodes.extentreports.ExtentTest;
 public class WebDriverThreadManager {
 	
 	 static ExtentReports report;
-	static ExtentTest test;
+	 static ExtentTest test;
 
     private static WebDriverManager webDriverManager = new WebDriverManager();
 
@@ -64,6 +64,19 @@ public class WebDriverThreadManager {
         }
         return getDriver();
     }
+
+//    /**
+//     * Instantiates a session of an WebDriver object and navigates to a specific URL.
+//     *
+//     * @return WebDriver object.
+//     */
+//    public static synchronized WebDriver startDriver(String url) {
+//        forceCloseEverything();
+//        if (getDriver() == null) {
+//            presetupDriver(url);
+//        }
+//        return getDriver();
+//    }
 
     /**
      * Returns the current driver instance.
@@ -109,6 +122,23 @@ public class WebDriverThreadManager {
         open(url);
         dismissBrowserAlert();
    }
+
+//    /**
+//     * Instantiate the driver and sets its parameters.
+//     *
+//     * @param url - URL where the driver should navigate as a first page.
+//     */
+//    private static synchronized void presetupDriver(String url, String browser) {
+//        WebDriver driver = webDriverManager.createWebDriver(browser);
+//
+//        webDriverMap.put((int) Thread.currentThread().getId(), driver);
+//
+//        driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
+//        driver.manage().timeouts().pageLoadTimeout(25, TimeUnit.SECONDS);
+//        driver.manage().window().maximize();
+//        open(url);
+//        dismissBrowserAlert();
+//    }
 
     /**
      * Method used to close every instance of Chrome/Firefox

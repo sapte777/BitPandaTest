@@ -297,4 +297,11 @@ public class CRTestUtils {
         return eval_size;
     }
 
+
+    public static String getPageTitle (){
+        Tacitus.getInstance().log("Getting page title ... ");
+        WebDriver _driver = WebDriverThreadManager.getDriver();
+        return _driver.getTitle();
+    }
+
 }

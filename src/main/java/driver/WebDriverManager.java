@@ -1,12 +1,10 @@
 package driver;
 
+import logger.Tacitus;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
-
 import utilities.ConfigurationData;
-import logger.Tacitus;
 
 import java.io.File;
 
@@ -14,6 +12,7 @@ import java.io.File;
  * Created by DanG
  */
 class WebDriverManager {
+
     /**
      * Creates a new WebDriver instance.
      *
@@ -22,7 +21,6 @@ class WebDriverManager {
     WebDriver createWebDriver() {
         BrowserTypes _browser = getDefaultBrowser();
         String _fileName = getFilePath(_browser.getFileName());
-        System.out.println("the _fileName is: -->"+ _fileName);
 
         switch (_browser) {
             case CHROME:
@@ -39,7 +37,6 @@ class WebDriverManager {
         }
     }
 
-  
 
     /**
      * Gets the location of the browser file. The driver must always be placed within the project's
